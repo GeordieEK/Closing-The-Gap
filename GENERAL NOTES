@@ -1,0 +1,11 @@
+Updated Team_Members & User_Personas in ERD to have Primary Keys
+Removed LGA from some attributes in LGA table (is redundant)
+Changed LGA_Code to LGA.Code to lessen ambiguous names
+
+The data is bad, the tables do not match up in numbers, this had to be accounted for in the percentages.
+
+We had to change the tables multiple times to get something that was more viewable, our tables were easy to query initially but harder to display to be usable.
+
+We're using views to query the database, this is nice as it cleans up java code and modifications can easily be made to the view in sqlite if needed.
+
+RANKING METRIC!! MY SAVIOUR! (Lots of ridiculous queries were made but all that was needed was a ranking metric case clause). Actually no wait this isn't true I'm gna cry.

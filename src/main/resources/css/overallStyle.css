@@ -1,0 +1,125 @@
+/* General Styling */
+
+body {
+  /* TODO - Fix the font */
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #072125;
+}
+
+/* Navbar animation on mouse hover */
+.navbar a:hover {
+  /* margin-top: 2px; */
+  transform: scale(1.05);
+  /* color: blue; */
+}
+
+h1 {
+  font-size: 3vw;
+}
+
+/* Assign this class if you want to quickly center something on x and y axis */
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Some animation on mouse over any link */
+a:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: 'topLogo nav1 nav2 nav3 topRight';
+  background-color: #fafafa;
+  height: 30px;
+}
+
+.navItem {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-weight: 500;
+}
+
+.topLogo {
+  grid-area: topLogo;
+  font-weight: 700;
+}
+/* You can probably ignore these, they're part of the nav responsiveness */
+.nav1 {
+  grid-area: nav1;
+}
+
+.nav2 {
+  grid-area: nav2;
+}
+
+.nav3 {
+  grid-area: nav3;
+}
+
+.nav4 {
+  grid-area: topRight;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2vw;
+}
+
+/* Footer Styling */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: 'footerLogo footerLogo footer1 footer2 footer3';
+  background-color: #072125;
+  color: white;
+  padding: 0 5vw;
+}
+
+.footer a {
+  color: white;
+}
+.footer a:hover {
+  /* font-size: 105%; */
+  font-weight: 500;
+}
+
+.footerLogo {
+  grid-area: footerLogo;
+}
+.footer1 {
+  grid-area: footer1;
+}
+.footer2 {
+  grid-area: footer2;
+}
+.footer3 {
+  grid-area: footer3;
+}
+
+.footer p {
+  margin: 1vw 0vw;
+}
+.footerLogo p {
+  font-size: 90%;
+  margin: 7px 0;
+}
+
+/* Content divider */
+.contentDivider {
+  border-top: solid 1px;
+  width: 90%;
+  margin: 2vw auto 2vw;
+}

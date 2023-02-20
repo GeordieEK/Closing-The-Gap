@@ -1,0 +1,36 @@
+/* Header styling */
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.headerItem {
+  display: flex;
+  justify-content: center;
+  padding-top: 5vw;
+  width: 50%;
+}
+
+#table-container {
+  max-width: 95vw;
+  max-height: 500px;
+  margin: 0vw 2.5vw 4vw 2.5vw;
+}
+
+#filterBarTop {
+  display: flex;
+  justify-content: space-around;
+  /* align-content: space-around; */
+  margin: 2vw 2vw 0vw 2vw;
+}
+
+#filterBarBottom {
+  display: flex;
+  /* justify-content: space-around; */
+  /* align-content: space-around; */
+  margin: 14px 2vw 0vw 2vw;
+}
+
+.filterElement {
+  margin: 1vw 2vw;
+}

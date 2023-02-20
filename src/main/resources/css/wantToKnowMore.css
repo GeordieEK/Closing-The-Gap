@@ -1,0 +1,42 @@
+.gridWrapper {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 45px 30px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "top-left top-middle top-right"
+    "bottom-left bottom-middle bottom-right";
+  padding: 5vw;
+}
+
+.top-left { grid-area: top-left; }
+
+.top-middle { grid-area: top-middle; }
+
+.top-right { grid-area: top-right; }
+
+.bottom-left { grid-area: bottom-left; }
+
+.bottom-middle { grid-area: bottom-middle; }
+
+.bottom-right { grid-area: bottom-right; }
+
+
+.imageGrid {
+  background-color: white;
+  flex: display;
+  flex-direction:column;
+  align-items: center;
+}
+.imageGrid img {
+  width:12vw;
+  clip-path: circle();
+}
+.textGrid {
+  margin: 2vw;
+  flex: display;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}

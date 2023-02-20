@@ -1,0 +1,30 @@
+/* Header styling */
+.header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.headerItem {
+  display: flex;
+  justify-content: center;
+  padding-top: 5vw;
+  width: 50%;
+}
+.contentStyling {
+  width: 50%;
+}
+
+.list li {
+  margin-top: 15px;
+}
+.personaBlock {
+  margin: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.personaBlock img {
+  width: 28vw;
+  margin: 0vw 5vw 0vw 5vw;
+  border-radius: 100px;
+}

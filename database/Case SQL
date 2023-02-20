@@ -1,0 +1,117 @@
+SELECT lga_code AS 'LGA Code', status_description AS 'Indigenous Status', sex_description AS 'Sex', category AS 'Age Range', num_people AS 'No. People' 
+, CASE category
+    WHEN '0 - 4' THEN num_people
+    END AS '0 - 4'
+, CASE category
+    WHEN '5 - 9' THEN num_people
+    ELSE NULL END AS '5 - 9'
+, CASE category
+    WHEN '10 - 14' THEN num_people
+    ELSE NULL END AS '10 - 14'
+, CASE category
+    WHEN '15 - 19' THEN num_people
+    ELSE NULL END AS '15 - 19'
+, CASE category
+    WHEN '20 - 24' THEN num_people
+    ELSE NULL END AS '20 - 24'
+, CASE category
+    WHEN '25 - 29' THEN num_people
+    ELSE NULL END AS '25 - 29'
+, CASE category
+    WHEN '30 - 34' THEN num_people
+    ELSE NULL END AS '30 - 34'
+, CASE category
+    WHEN '35 - 39' THEN num_people
+    ELSE NULL END AS '35 - 39'
+, CASE category
+    WHEN '40 - 44' THEN num_people
+    ELSE NULL END AS '40 - 44'
+, CASE category
+    WHEN '45 - 49' THEN num_people
+    ELSE NULL END AS '45 - 49'
+, CASE category
+    WHEN '50 - 54' THEN num_people
+    ELSE NULL END AS '50 - 54'
+, CASE category
+    WHEN '54 - 59' THEN num_people
+    ELSE NULL END AS '54 - 49'
+, CASE category
+    WHEN '60 - 64' THEN num_people
+    ELSE NULL END AS '60 - 64'
+, CASE category
+    WHEN '65+' THEN num_people
+    ELSE NULL END AS '65+'
+FROM Demographic
+JOIN Age ON demographic_id = Age.id
+JOIN Gender ON sex_id = sex
+JOIN Indigenous_Status ON indi_status = status
+WHERE lga_code = 10050 AND status_description = 'Indigenous' AND sex_description = 'Female'
+GROUP BY lga_code, status_description, sex_description, category
+;
+
+
+SELECT lga_code, status_description, sex_description
+, CASE category
+    WHEN '0 - 4' THEN num_people
+    END AS '0 - 4'
+, CASE category
+    WHEN '5 - 9' THEN num_people
+    ELSE NULL END AS '5 - 9'
+, CASE category
+    WHEN '10 - 14' THEN num_people
+    ELSE NULL END AS '10 - 14'
+, CASE category
+    WHEN '15 - 19' THEN num_people
+    ELSE NULL END AS '15 - 19'
+, CASE category
+    WHEN '20 - 24' THEN num_people
+    ELSE NULL END AS '20 - 24'
+, CASE category
+    WHEN '25 - 29' THEN num_people
+    ELSE NULL END AS '25 - 29'
+, CASE category
+    WHEN '30 - 34' THEN num_people
+    ELSE NULL END AS '30 - 34'
+, CASE category
+    WHEN '35 - 39' THEN num_people
+    ELSE NULL END AS '35 - 39'
+, CASE category
+    WHEN '40 - 44' THEN num_people
+    ELSE NULL END AS '40 - 44'
+, CASE category
+    WHEN '45 - 49' THEN num_people
+    ELSE NULL END AS '45 - 49'
+, CASE category
+    WHEN '50 - 54' THEN num_people
+    ELSE NULL END AS '50 - 54'
+, CASE category
+    WHEN '54 - 59' THEN num_people
+    ELSE NULL END AS '54 - 49'
+, CASE category
+    WHEN '60 - 64' THEN num_people
+    ELSE NULL END AS '60 - 64'
+, CASE category
+    WHEN '65+' THEN num_people
+    ELSE NULL END AS '65+'
+FROM Demographic
+JOIN Age ON demographic_id = Age.id
+JOIN Gender ON sex_id = sex
+JOIN Indigenous_Status ON indi_status = status
+--GROUP BY lga_code, status_description, sex_description AND '0 - 4', '5 - 9'
+;
+
+SELECT SUM(num_people) AS query_population, total_population, ROUND((SUM(num_people) / CAST(total_population AS REAL) * 100), 6) AS query_result FROM Demographic
+JOIN Age ON demographic_id = Age.id
+JOIN Gender ON sex_id = sex
+JOIN Indigenous_Status ON indi_status = status
+JOIN Age_Bandwidth ON category = age_bandwidth.bandwidth_age
+JOIN (
+    --Total indigenous population
+    SELECT SUM(num_people) AS total_population FROM Demographic
+    JOIN Age ON demographic_id = Age.id
+    JOIN Gender ON sex_id = sex
+    JOIN Indigenous_Status ON indi_status = status
+    WHERE indi_status = 'i'
+)
+WHERE indi_status = 'i' AND lower_limit = 65
+GROUP BY bandwidth_age;

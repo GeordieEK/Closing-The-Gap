@@ -1,0 +1,39 @@
+/* Header styling */
+.headerItem {
+  display: flex;
+  justify-content: center;
+  padding-top: 5vw;
+  /* background-image: url('art2.jpeg') no-repeat; */
+}
+
+/* button {
+  background: #20484f;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: white;
+  font-weight: 500;
+} */
+
+#findOutButton {
+  display: block;
+}
+
+/* Fact block styling */
+.factBlock {
+  width: 15vw;
+  margin: 0vw 5vw;
+}
+
+/* Image & Text combo block styling */
+.imageTextBlock {
+  width: 30vw;
+  margin: 2vw 5vw;
+}
+
+.contentBlock {
+  margin: 2vw;
+}
+
+#signUpTrigger {
+  margin-left: 1vw;
+}

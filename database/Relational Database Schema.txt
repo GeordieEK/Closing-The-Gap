@@ -1,0 +1,24 @@
+Demographic ({PK}Demographic_ID, {FK}Sex_ID, {FK}Indi_status, {FK}LGA_Code)
+
+Gender ({PK}Sex, Sex_Description)
+
+Indigenous_Status ({PK}Status, Status_Description)
+
+LGA ({PK}Code, LGA_Name, LGA_Type, Area, Latitude, Longitude)
+
+Non_School_Education ({FK}ID, Category, Num_People)
+
+School_Education ({FK}ID, Category, Num_People)
+
+Labour_Force ({FK}ID, Category, Num_People)
+
+Age ({FK}ID, {FK}Category, Num_People)
+
+Age_Bandwidth ({PK}Category, Lower_Limit, Upper_Limit)
+
+Team_Members ({PK}Student_number, First_Name, Last_Name, Email_ID)
+
+User_Attributes ({PK}Persona_ID, Age, Ethnicity, Occupation, Description, Goals, Pain_Points, Needs, Experiences)
+
+User_Personas ({PK}Name, IMAGE)
+
